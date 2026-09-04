@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Bearish Diamond signal example</title>
+  <desc id="desc">A rising approach enters an expanding and contracting diamond, then breaks below the lower boundary toward a measured-height target.</desc>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <style>
+    .title { font: 700 30px system-ui, sans-serif; fill: #0f172a; }
+    .label { font: 600 19px system-ui, sans-serif; fill: #334155; }
+    .small { font: 500 16px system-ui, sans-serif; fill: #64748b; }
+    .price { fill: none; stroke: #111827; stroke-width: 3; stroke-linejoin: round; }
+    .upper { fill: none; stroke: #ef4444; stroke-width: 5; }
+    .lower { fill: none; stroke: #2563eb; stroke-width: 5; }
+    .guide { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 10 8; }
+    .signal { fill: none; stroke: #dc2626; stroke-width: 5; }
+    .point { fill: #ffffff; stroke: #111827; stroke-width: 2; }
+  </style>
+  <text x="600" y="48" text-anchor="middle" class="title">Bearish Diamond · 15m</text>
+  <path class="price" d="M40 470 L105 420 L170 350 L245 270 L320 335 L405 155 L500 420 L595 245 L680 360 L755 290 L825 405 L900 520 L980 555 L1080 610"/>
+  <path class="upper" d="M245 270 L405 155 M405 155 L825 405"/>
+  <path class="lower" d="M320 335 L500 420 M500 420 L825 405"/>
+  <circle class="point" cx="245" cy="270" r="7"/><circle class="point" cx="320" cy="335" r="7"/>
+  <circle class="point" cx="405" cy="155" r="7"/><circle class="point" cx="500" cy="420" r="7"/>
+  <circle class="point" cx="595" cy="245" r="7"/><circle class="point" cx="680" cy="360" r="7"/>
+  <line class="guide" x1="405" y1="155" x2="405" y2="420"/>
+  <line class="guide" x1="900" y1="420" x2="900" y2="650"/>
+  <line class="guide" x1="40" y1="650" x2="1120" y2="650"/>
+  <path class="signal" d="M805 392 L900 520 M900 520 l-25 -12 M900 520 l4 -28"/>
+  <text x="430" y="290" class="label">H</text>
+  <text x="420" y="445" class="small">central height</text>
+  <text x="830" y="360" class="label">sell signal</text>
+  <text x="925" y="545" class="small">lower-boundary break</text>
+  <text x="920" y="640" class="label">target = H</text>
+  <text x="175" y="240" class="small">rising approach</text>
+  <text x="520" y="120" class="small">expansion</text>
+  <text x="690" y="220" class="small">contraction</text>
+</svg>

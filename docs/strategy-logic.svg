@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Bullish and bearish Diamond reversal logic</title>
+  <desc id="desc">Two six-pivot diamonds with expanding left boundaries, contracting right boundaries, and breakout arrows against the preceding trend.</desc>
+  <rect width="1200" height="640" fill="#f8fafc"/>
+  <style>
+    .title { font: 700 28px system-ui, sans-serif; fill: #0f172a; }
+    .label { font: 600 18px system-ui, sans-serif; fill: #334155; }
+    .small { font: 500 15px system-ui, sans-serif; fill: #64748b; }
+    .upper { fill: none; stroke: #ef4444; stroke-width: 4; }
+    .lower { fill: none; stroke: #2563eb; stroke-width: 4; }
+    .price { fill: none; stroke: #0f172a; stroke-width: 3; stroke-linejoin: round; }
+    .break-long { fill: none; stroke: #16a34a; stroke-width: 5; }
+    .break-short { fill: none; stroke: #dc2626; stroke-width: 5; }
+    .pivot { fill: #ffffff; stroke: #0f172a; stroke-width: 2; }
+  </style>
+  <text x="600" y="48" text-anchor="middle" class="title">Diamond · 15m reversal geometry</text>
+
+  <g transform="translate(40 80)">
+    <text x="260" y="24" text-anchor="middle" class="label">Bullish after a falling approach</text>
+    <path class="price" d="M10 70 L70 110 L120 170 L180 120 L250 225 L330 80 L405 190 L475 118 L535 78"/>
+    <path class="lower" d="M120 170 L250 225 M250 225 L485 135"/>
+    <path class="upper" d="M180 120 L330 80 M330 80 L485 135"/>
+    <circle class="pivot" cx="120" cy="170" r="6"/><circle class="pivot" cx="180" cy="120" r="6"/>
+    <circle class="pivot" cx="250" cy="225" r="6"/><circle class="pivot" cx="330" cy="80" r="6"/>
+    <circle class="pivot" cx="405" cy="190" r="6"/><circle class="pivot" cx="475" cy="118" r="6"/>
+    <path class="break-long" d="M470 125 L535 78 M535 78 l-18 1 M535 78 l-7 17"/>
+    <text x="250" y="265" text-anchor="middle" class="small">expand → central extremes → contract</text>
+    <text x="455" y="52" text-anchor="middle" class="small">break upper boundary</text>
+  </g>
+
+  <g transform="translate(630 80)">
+    <text x="260" y="24" text-anchor="middle" class="label">Bearish after a rising approach</text>
+    <path class="price" d="M10 225 L70 180 L120 125 L180 175 L250 70 L330 215 L405 105 L475 177 L535 220"/>
+    <path class="upper" d="M120 125 L250 70 M250 70 L485 160"/>
+    <path class="lower" d="M180 175 L330 215 M330 215 L485 160"/>
+    <circle class="pivot" cx="120" cy="125" r="6"/><circle class="pivot" cx="180" cy="175" r="6"/>
+    <circle class="pivot" cx="250" cy="70" r="6"/><circle class="pivot" cx="330" cy="215" r="6"/>
+    <circle class="pivot" cx="405" cy="105" r="6"/><circle class="pivot" cx="475" cy="177" r="6"/>
+    <path class="break-short" d="M470 170 L535 220 M535 220 l-18 -2 M535 220 l-7 -17"/>
+    <text x="250" y="265" text-anchor="middle" class="small">expand → central extremes → contract</text>
+    <text x="455" y="248" text-anchor="middle" class="small">break lower boundary</text>
+  </g>
+
+  <g transform="translate(95 430)">
+    <line x1="0" y1="0" x2="1010" y2="0" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="0" y="48" class="label">Entry</text>
+    <text x="105" y="48" class="small">breakout, next-close acceptance, or a held retest</text>
+    <text x="0" y="88" class="label">Target</text>
+    <text x="105" y="88" class="small">100% of central top-to-bottom height from breakout close</text>
+    <text x="0" y="128" class="label">Stop</text>
+    <text x="105" y="128" class="small">beyond the final opposite-side pivot plus configurable height padding</text>
+  </g>
+</svg>
