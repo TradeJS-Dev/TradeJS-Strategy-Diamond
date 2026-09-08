@@ -3,6 +3,27 @@ import path from "node:path";
 import { strategyEntries } from "../index";
 
 describe("strategy config contract", () => {
+  it.each(strategyEntries)(
+    "keeps decision costs explicit for $manifest.name",
+    (entry) => {
+      const config = entry.parseConfig({
+        RISK_FEE_RATE: 0.002,
+        RISK_SLIPPAGE_BPS: 15,
+      });
+      expect(config).toMatchObject({
+        RISK_FEE_RATE: 0.002,
+        RISK_SLIPPAGE_BPS: 15,
+      });
+      expect(() => entry.parseConfig({ SLIPPAGE_BASE_BPS: 10 })).toThrow(
+        "SLIPPAGE_BASE_BPS",
+      );
+      expect(entry.defaults).not.toHaveProperty("FEE_PERCENT");
+      expect(entry.defaults).not.toHaveProperty("SLIPPAGE_BASE_BPS");
+      expect(() => entry.parseConfig({ FEE_PERCENT: 0.001 })).toThrow(
+        "FEE_PERCENT",
+      );
+    },
+  );
   it("uses the requested 15-minute timeframe", () => {
     expect(strategyEntries).toHaveLength(1);
     expect(strategyEntries[0]?.manifest.name).toBe("Diamond");

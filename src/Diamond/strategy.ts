@@ -1,4 +1,4 @@
-import { createStrategyConfigParser } from "@tradejs/strategy-kit/config";
+import { createCostIsolatedStrategyConfigParser } from "@tradejs/strategy-kit/config";
 import type { ValidatedStrategyRegistryEntry } from "@tradejs/strategy-kit/config";
 import { config as DEFAULT_CONFIG, DiamondConfig } from "./config";
 import { createDiamondCore } from "./core";
@@ -7,7 +7,7 @@ import { diamondManifest } from "./manifest";
 export const DiamondStrategyDefinition: ValidatedStrategyRegistryEntry<DiamondConfig> =
   {
     defaults: DEFAULT_CONFIG,
-    parseConfig: createStrategyConfigParser({
+    parseConfig: createCostIsolatedStrategyConfigParser({
       strategyName: "Diamond",
       defaults: DEFAULT_CONFIG,
     }),
