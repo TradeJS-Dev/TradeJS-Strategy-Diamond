@@ -41,6 +41,12 @@ modes. `close_acceptance` is the default.
 yarn add @tradejs/strategy-diamond
 ```
 
+To install the latest verified preview, run:
+
+```bash
+yarn add @tradejs/strategy-diamond@beta
+```
+
 Register the package in `tradejs.config.ts`:
 
 ```ts
